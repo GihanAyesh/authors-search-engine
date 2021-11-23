@@ -36,7 +36,33 @@ const connector = new AppSearchAPIConnector({
 const config = {
   searchQuery: {
     facets: buildFacetConfigFromConfig(),
-    ...buildSearchOptionsFromConfig()
+    ...buildSearchOptionsFromConfig(),
+    result_fields: {
+      name: { snippet: {
+        size: 100,
+        fallback: true
+      } },
+      birthplace: { raw: {} },
+      genres: { raw: {} },
+      work: { snippet: {
+        size: 400,
+        fallback: true
+      }},
+      awards: { snippet: {
+        size: 400,
+        fallback: true
+      } },
+      publishers: { raw: {} },
+      bio: { snippet: {
+        size: 300,
+        fallback: true
+      } },
+      critical_perspective: {snippet: {
+        size: 300,
+        fallback: true
+      } },
+      image: { raw: {} },
+    }
   },
   autocompleteQuery: buildAutocompleteQueryConfig(),
   apiConnector: connector,
@@ -71,7 +97,6 @@ export default function App() {
                       titleField={getConfig().titleField}
                       urlField={getConfig().urlField}
                       thumbnailField={getConfig().thumbnailField}
-                      shouldTrackClickThrough={true}
                     />
                   }
                   bodyHeader={
