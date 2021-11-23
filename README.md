@@ -6,6 +6,7 @@
 - Software Stack
 - Preprocessing
 - Advanced features
+- File Structure
 
 ---
 
@@ -29,6 +30,7 @@ npm start
 - Scraping - BeautifulSoup
 - Search Engine - elasticsearch
 - Frontend - react.js
+- UI template - search.ui library
 - Backend - node.js
 
 ## Preprocessing
@@ -59,3 +61,11 @@ A total of 353 documents is collected. The documents are stemmed, tokenized and 
 2. Sorting can be done using the following fields.
 - genres 
 
+## File Structure
+
+- documents - The corpus of 353 authors is saved here in csv format
+- public - favicon and web page name is defined
+- src - config - config helper.js - controllers are defined, engine.json - configuration file
+- App.js - The React app is defined
+- package.json - The installed packages
+- writer_scraper.ipynb - The scrapping script
